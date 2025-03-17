@@ -1,0 +1,55 @@
+app/main.py: Điểm vào chính của ứng dụng, chứa FastAPI instance.
+app/api/v1/endpoints/: Các API endpoint cho từng module (sản phẩm, đơn hàng, người dùng, xác thực).
+app/core/: Chứa cài đặt cấu hình, bảo mật và cơ sở dữ liệu.
+app/models/: Định nghĩa các bảng database bằng SQLAlchemy ORM.
+app/schemas/: Định nghĩa các schema sử dụng Pydantic để validate dữ liệu request/response.
+app/services/: Chứa các service xử lý logic nghiệp vụ.
+tests/: Chứa các unit test.
+.env: File chứa biến môi trường (database URL, JWT secret key,...).
+alembic/: Quản lý migration cho database.
+Dockerfile: Cấu hình Docker để deploy dự án.
+
+
+base tree
+backend/
+│── app/
+│   ├── api/
+│   │   ├── v1/
+│   │   │   ├── endpoints/
+│   │   │   │   ├── product.py
+│   │   │   │   ├── order.py
+│   │   │   │   ├── user.py
+│   │   │   │   ├── auth.py
+│   │   │   │   └── __init__.py
+│   │   │   ├── __init__.py
+│   │   ├── __init__.py
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   ├── database.py
+│   │   ├── __init__.py
+│   ├── models/
+│   │   ├── product.py
+│   │   ├── order.py
+│   │   ├── user.py
+│   │   ├── __init__.py
+│   ├── schemas/
+│   │   ├── product.py
+│   │   ├── order.py
+│   │   ├── user.py
+│   │   ├── auth.py
+│   │   ├── __init__.py
+│   ├── services/
+│   │   ├── product_service.py
+│   │   ├── order_service.py
+│   │   ├── user_service.py
+│   │   ├── __init__.py
+│   ├── main.py
+│   ├── __init__.py
+│── tests/
+│── .env
+│── requirements.txt
+│── alembic/
+│── alembic.ini
+│── Dockerfile
+│── README.md
